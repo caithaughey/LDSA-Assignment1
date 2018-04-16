@@ -10,14 +10,19 @@ import org.apache.hadoop.util.*;
 public class WordCountNew {
     public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
         private final static IntWritable VALUE = new IntWritable(1);
+        private Text letter = new Text();
      
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
             String line = value.toString();
             StringTokenizer tokenizer = new StringTokenizer(line);
             while (tokenizer.hasMoreTokens()) {
               String token = tokenizer.nextToken();
-              if(token.startsWith("a-z")) {
-                output.collect(new Text(token.charAt(0)), VALUE);
+              if(token.startsWith("a")) {
+                letter = "a count";
+                output.collect(letter, VALUE);
+              } else if(token.startsWith("b")) {
+                  letter ="b count";
+                  output.collect(letter, VALUE);
             }
         }
     }
