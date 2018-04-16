@@ -18,23 +18,20 @@ public class WordCountNew {
             while (tokenizer.hasMoreTokens()) {
               String token = tokenizer.nextToken();
               if(token.startsWith("a")) {
-                letter = "a count";
+                letter.set(token.charAt(0));
                 output.collect(letter, VALUE);
-              } else if(token.startsWith("b")) {
-                  letter ="b count";
-                  output.collect(letter, VALUE);
             }
         }
     }
     }
  
     public static class Reduce extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
-        public void reduce(Text letter, Iterator<IntWritable> values, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
+        public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
             int sum = 0;
           for (IntWritable val: values) {
                 sum += val.get();
             }
-            output.collect(letter, new IntWritable(sum));
+            output.collect(key, new IntWritable(sum));
         }
     }
  
