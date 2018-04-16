@@ -17,8 +17,9 @@ public class WordCountNew {
             StringTokenizer tokenizer = new StringTokenizer(line);
             while (tokenizer.hasMoreTokens()) {
               String token = tokenizer.nextToken();
-              if(token.startsWith("a")) {
-                letter.set(token.charAt(0));
+              if(token.startsWith("a-z")) {
+                String s = token.charAt(0);
+                letter.set(s);
                 output.collect(letter, VALUE);
             }
         }
