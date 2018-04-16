@@ -35,7 +35,7 @@ public class WordCountNew {
     }
  
     public static void main(String[] args) throws Exception {
-        JobConf conf = new JobConf(LetterCount.class);
+        JobConf conf = new JobConf(WordCountNew.class);
         conf.setJobName("lettercount");
      
         conf.setOutputKeyClass(Text.class);
