@@ -10,9 +10,9 @@ for line in sys.stdin:
     # remove leading and trailing whitespace
     json_data = json.loads(json.dumps(line.strip()))    
     # check if retweeted_status is a key in json_data, if not it is not a retweet
-    if 'retweeted_status' not in json_line:
+    if 'retweeted_status' not in json_data:
         # select part of the json_data that contains a string of text by using the text key
-        json_tweets = json_line.get('text')
+        json_tweets = json_data.get('text')
         # split the line into words
         tweet_words = json_tweets.split()
         # lowercase all words in list
