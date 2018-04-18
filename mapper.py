@@ -5,14 +5,12 @@ import sys
 import json
 
 # input comes from STDIN (standard input)
-for line in sys.stdin:
-    # use json module to convert tweet from json format to python
-    # remove leading and trailing whitespace
-    json_data = json.loads(line.strip())
+json_data = json.loads(sys.stdin)
+for json_line in json_data
     # check if retweeted_status is a key in json_data, if not it is not a retweet
-    if 'retweeted_status' not in json_data:
+    if 'retweeted_status' not in json_line:
         # select part of the json_data that contains a string of text by using the text key
-        json_tweets = json_data.get('text')
+        json_tweets = json_line.get('text')
         # split the line into words
         tweet_words = json_tweets.split()
         # lowercase all words in list
