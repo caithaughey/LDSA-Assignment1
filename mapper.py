@@ -11,7 +11,7 @@ for line in sys.stdin:
     json_data = json.loads(line.strip())
     print(type(json_data))
     # check if retweeted_status is a key in json_data, if not it is not a retweet
-    if 'retweeted_status' not in json_data
+    if json_data.get('retweeted_status') is None
         # select part of the json_data that contains a string of text by using the text key
         json_tweets = json_data.get('text')
         # split the line into lowercase words
