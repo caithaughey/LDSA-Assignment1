@@ -8,8 +8,8 @@ import json
 #for line in sys.stdin:
     # use json module to convert tweet from json format to python
     # remove leading and trailing whitespace
-    json_data = json.loads(sys.stdin)
-    print(type(json_data))
+json_data = json.loads(sys.stdin)
+print(type(json_data))
     # check if retweeted_status is a key in json_data, if not it is not a retweet
 ##    if 'retweeted_status' not in json_data:
 ##        # select part of the json_data that contains a string of text by using the text key
