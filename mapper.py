@@ -21,7 +21,7 @@ for line in sys.stdin:
         # increase counters
         for pronoun in keywords:
             # check if pronoun is in the tweet
-            if pronoun in tweet_words
+            if pronoun in tweet_words:
                 # write the results to STDOUT (standard output);
                 # what we output here will be the input for the
                 # Reduce step, i.e. the input for reducer.py
