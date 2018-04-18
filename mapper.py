@@ -9,13 +9,13 @@ for line in sys.stdin:
     # use json module to convert tweet from json format to python
     # remove leading and trailing whitespace
     json_data = json.loads(line.strip())
-    print(type(json_data))
     # check if retweeted_status is a key in json_data, if not it is not a retweet
     if 'retweeted_status' not in json_data:
         # select part of the json_data that contains a string of text by using the text key
         json_tweets = json_data.get('text')
-        # split the line into lowercase words
+        # split the line into words
         tweet_words = json_tweets.split()
+        # lowercase all words in list
         tweet_words = [x.lower() for x in tweet_words]
         # define a list of keywords to search for
         keywords = ['han', 'hon', 'den', 'det', 'denna', 'denne', 'hen']
