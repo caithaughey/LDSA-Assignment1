@@ -2,18 +2,28 @@
 """mapper.py"""
 
 import sys
+import json
 
 # input comes from STDIN (standard input)
 for line in sys.stdin:
+    # use json module to convert tweet from json format to python
     # remove leading and trailing whitespace
-    line = line.strip()
-    # split the line into words
-    words = line.split()
-    # increase counters
-    for word in words:
-        # write the results to STDOUT (standard output);
-        # what we output here will be the input for the
-        # Reduce step, i.e. the input for reducer.py
-        #
-        # tab-delimited; the trivial word count is 1
-        print '%s\t%s' % (word, 1)
+    json_data = json.loads(line.strip())
+    # check if retweeted_status is a key in json_data, if not it is not a retweet
+    if 'retweeted_status' not in json_data
+        # select part of the json_data that contains a string of text by using the text key
+        json_tweets = json_data.get('text')
+        # split the line into words
+        tweet_words = json_tweets.split()
+        # define a list of keywords to search for
+        keywords = ['han', 'hon', 'den', 'det', 'denna', 'denne', 'hen']
+        # increase counters
+        for pronoun in keywords:
+            # check if pronoun is in the tweet
+            if pronoun in tweet_words
+                # write the results to STDOUT (standard output);
+                # what we output here will be the input for the
+                # Reduce step, i.e. the input for reducer.py
+                #
+                # tab-delimited; the trivial word count is 1
+                print '%s\t%s' % (pronoun, 1)
