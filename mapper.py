@@ -15,7 +15,8 @@ for line in sys.stdin:
         # select part of the json_data that contains a string of text by using the text key
         json_tweets = json_data.get('text')
         # split the line into lowercase words
-        tweet_words = json_tweets.split().lower()
+        tweet_words = json_tweets.split()
+        tweet_words = [x.lower() for x in tweet_words]
         # define a list of keywords to search for
         keywords = ['han', 'hon', 'den', 'det', 'denna', 'denne', 'hen']
         # increase counters
