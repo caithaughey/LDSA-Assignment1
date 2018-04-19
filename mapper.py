@@ -3,7 +3,6 @@
 
 import sys
 import json
-import re
 
 # input comes from STDIN (standard input)
 for line in sys.stdin:
@@ -23,7 +22,7 @@ for line in sys.stdin:
             tweet_words = [x.lower() for x in tweet_words]
             # define a list of keywords to search for
             keywords = ['han', 'hon', 'den', 'det', 'denna', 'denne', 'hen']
-            # increase counters
+            # iterate through the pronouns in the keywords list
             for pronoun in keywords:
                 # check if pronoun is in the tweet
                 if pronoun in tweet_words:
