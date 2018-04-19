@@ -12,16 +12,16 @@ for line in sys.stdin:
     if 'retweeted_status' not in json_data:
        # select part of the json_data that contains a string of text by using the text key
         json_tweets = json_data.get('text')
-        print(json_tweets)
+        #print(json_tweets)
         # remove leading and trailing whitespace
         json_tweets = json_tweets.strip()
-        print(json_tweets)
+        #print(json_tweets)
         # split the line into words
         tweet_words = json_tweets.split()
-        print(tweet_words)
+        #print(tweet_words)
         # lowercase all words in list
         tweet_words = [x.lower() for x in tweet_words]
-        print(tweet_words)
+        #print(tweet_words)
         # define a list of keywords to search for
         keywords = ['han', 'hon', 'den', 'det', 'denna', 'denne', 'hen']
         # increase counters
