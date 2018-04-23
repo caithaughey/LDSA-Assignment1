@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """mapper.py"""
 
+### This is the mapper script, which maps the word count data.
+
 import sys
 import json
 

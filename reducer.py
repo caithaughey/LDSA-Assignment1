@@ -4,6 +4,8 @@
 from operator import itemgetter
 import sys
 
+# This is the reducer script, which reduces the data given from the mapper output.
+
 current_word = None
 current_count = 0
 word = None

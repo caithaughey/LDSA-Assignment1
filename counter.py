@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 """counter.py"""
 
+### This counter script is used to calculate the total number of unique tweets in the
+### dataset (does not include retweets). The number of unique tweets is needed to
+### normalize the results from the word count.
+
 import sys
 import json
 
